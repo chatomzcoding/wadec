@@ -11,7 +11,7 @@
                 ?>
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
+                    <a href="produk.php?id=<?=$item->id?>">
                         <img src="<?=linkgambar($item->gambar)?>" alt="<?=linkgambar($item->gambar)?>">
                         <!-- Hover Content -->
                         <div class="hover-content">
