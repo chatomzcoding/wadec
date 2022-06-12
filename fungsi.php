@@ -1,5 +1,8 @@
 <?php 
 
+$id = (isset($_GET['id'])) ? $_GET['id'] : 5 ;
+
+
 // aktif menu berdasarkan menu
 function cekmenu($menu,$sesi)
 {
@@ -46,7 +49,7 @@ function getdata($link=NULL)
     return json_decode($response);
 
 }
-function getproduk($id)
+function getsub($id)
 {
     $curl = curl_init();
     $server     = cServer();
@@ -79,3 +82,14 @@ function linkgambarsub($gambar)
     $link = "https://sistem.zelnara.com/public/img/kategori/sub/".$gambar;
     return $link;
 }
+
+
+$datapokok = getsub(101);
+$getproduk = getsub($id);
+
+$logo = $datapokok->data[0]->gambar_sub;
+$favicon = $datapokok->data[1]->gambar_sub;
+$logoreverse = $datapokok->data[2]->gambar_sub;
+
+$produk = $getproduk->data;
+rsort($produk);

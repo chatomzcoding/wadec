@@ -1,7 +1,6 @@
 <?php 
     $menu   = 'produk';
     include 'header.php';
-    $id = (isset($_GET['id'])) ? $_GET['id'] : 5 ;
 ?>
         <div class="shop_sidebar_area">
 
@@ -18,7 +17,7 @@
                         <?php 
                             foreach (getdata('&label=wadec')->data as $k) {
                         ?>
-                                <li><a href="produk.php?id=<?=$k->id?>" class="<?=aktif($k->id,$id)?>"><?=$k->nama_kategori.' '.$k->id?></a></li>
+                                <li><a href="produk.php?id=<?=$k->id?>" class="<?=aktif($k->id,$id)?>"><?=$k->nama_kategori?></a></li>
                          <?php 
                             }
                         ?>
@@ -84,7 +83,7 @@
                     <div class="col-12">
                         <div class="product-topbar d-xl-flex align-items-end justify-content-between">
                             <div class="total-products">
-                                <p>DItampilkan <?= count(getproduk($id)->data)?> produk</p>
+                                <p>DItampilkan <?= count($produk)?> produk</p>
                                 <!-- <div class="view d-flex">
                                     <a href="#"><i class="fa fa-th-large" aria-hidden="true"></i></a>
                                     <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
@@ -119,7 +118,7 @@
 
                 <div class="row">
                     <?php 
-                        foreach (getproduk($id)->data as $item) {
+                        foreach ($produk as $item) {
                             ?>
                             <!-- Single Product Area -->
                             <div class="col-12 col-sm-6 col-md-12 col-xl-6">
@@ -128,7 +127,7 @@
                                     <div class="product-img">
                                         <img src="<?=linkgambarsub($item->gambar_sub)?>" alt="">
                                         <!-- Hover Thumb -->
-                                        <img class="hover-img" src="img/product-img/product2.jpg" alt="">
+                                        <img class="hover-img" src="<?=linkgambarsub($item->gambar_sub)?>" alt="">
                                     </div>
         
                                     <!-- Product Description -->

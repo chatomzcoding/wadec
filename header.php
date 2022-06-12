@@ -1,7 +1,5 @@
 <?php 
     include 'fungsi.php';
-    // var_dump(listkategori());
-    // die();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +15,7 @@
     <title>WadeC - Hiasan Dinding | <?=ucfirst($menu) ?></title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="<?=linkgambarsub($favicon)?>">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
@@ -53,7 +51,7 @@
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                <a href="index.php"><img src="<?=linkgambarsub($logo)?>" alt=""></a>
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
@@ -69,7 +67,7 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="index.php"><img src="img/core-img/logo.png" alt=""></a>
+                <a href="index.php"><img src="<?=linkgambarsub($logo)?>" alt=""></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
